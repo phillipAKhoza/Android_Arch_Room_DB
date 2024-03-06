@@ -9,6 +9,7 @@ import com.phillip_dev.knowtes.Model.Note
 import com.phillip_dev.knowtes.Repository.NoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.lang.IllegalArgumentException
 
 
 class NoteViewModel(private  val repository: NoteRepository): ViewModel() {
@@ -35,6 +36,11 @@ class NoteViewModel(private  val repository: NoteRepository): ViewModel() {
 }
 class  NoteViewModelFactory(private  var repository: NoteRepository): ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return super.create(modelClass)
+
+        if(modelClass.isAssignableFrom(NoteViewModel::class.java)){
+            return NoteViewModel(repository) as T
+        }else{
+            throw IllegalArgumentException("Unknown View Model")
+        }
     }
 }
