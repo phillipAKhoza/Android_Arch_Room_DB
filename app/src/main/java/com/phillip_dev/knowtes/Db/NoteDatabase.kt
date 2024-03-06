@@ -6,4 +6,7 @@ import com.phillip_dev.knowtes.Model.Note
 
 @Database(entities = [Note::class], version = 1)
 abstract class NoteDatabase: RoomDatabase() {
+
+    abstract fun getNoteDao(): NoteDao
+
 }
