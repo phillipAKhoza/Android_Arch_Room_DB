@@ -9,4 +9,8 @@ abstract class NoteDatabase: RoomDatabase() {
 
     abstract fun getNoteDao(): NoteDao
 
+    companion object{
+        private  var INSTANCE : NoteDatabase? = null
+    }
+
 }
