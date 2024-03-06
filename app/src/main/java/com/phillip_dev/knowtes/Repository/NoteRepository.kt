@@ -12,4 +12,10 @@ class NoteRepository(private  val noteDao: NoteDao) {
     suspend fun addNote(note: Note){
         noteDao.addNote(note)
     }
+
+    @WorkerThread
+    suspend fun updateNote(note: Note){
+        noteDao.update(note)
+    }
+
 }
