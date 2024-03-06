@@ -18,4 +18,10 @@ class NoteViewModel(private  val repository: NoteRepository): ViewModel() {
         repository.addNote(note)
     }
 
+    fun updateNote(note: Note)= viewModelScope.launch(Dispatchers.IO) {
+        repository.updateNote(note)
+    }
+
+
+
 }
