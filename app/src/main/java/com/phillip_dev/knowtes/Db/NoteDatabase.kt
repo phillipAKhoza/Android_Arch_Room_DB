@@ -38,6 +38,8 @@ abstract class NoteDatabase: RoomDatabase() {
             INSTANCE?.let {
                 scope.launch {
                     val noteDao = it.getNoteDao()
+
+                    noteDao.addNote(Note("Title1", "Description"))
                 }
             }
         }
