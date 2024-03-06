@@ -1,4 +1,7 @@
 package com.phillip_dev.knowtes
 
-class NoteApplication {
+import android.app.Application
+
+class NoteApplication : Application(){
+
 }
