@@ -1,6 +1,8 @@
 package com.phillip_dev.knowtes.Db
 
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.phillip_dev.knowtes.Model.Note
 
@@ -11,6 +13,16 @@ abstract class NoteDatabase: RoomDatabase() {
 
     companion object{
         private  var INSTANCE : NoteDatabase? = null
+
+        fun getDataBase(context: Context) : NoteDatabase{
+            return INSTANCE ?: synchronized(this){
+                val instance = Room.databaseBuilder(
+                   context.applicationContext ,NoteDatabase::class.java,"note_database"
+                ).build()
+                INSTANCE=instance
+                instance
+            }
+        }
     }
 
 }
