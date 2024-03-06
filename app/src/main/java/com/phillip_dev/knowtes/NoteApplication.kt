@@ -10,7 +10,7 @@ class NoteApplication : Application(){
     val applicationScope = CoroutineScope(SupervisorJob())
 
     val database by lazy {
-        NoteDatabase.getDataBase(this)
+        NoteDatabase.getDataBase(this, applicationScope)
     }
     val repository by lazy {
         NoteRepository(database.getNoteDao())
