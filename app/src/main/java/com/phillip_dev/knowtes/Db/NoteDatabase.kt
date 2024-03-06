@@ -39,7 +39,7 @@ abstract class NoteDatabase: RoomDatabase() {
                 scope.launch {
                     val noteDao = it.getNoteDao()
 
-                    noteDao.addNote(Note("Title1", "Description"))
+                    noteDao.addNote(Note("Title 1", "Description 1"))
                 }
             }
         }
