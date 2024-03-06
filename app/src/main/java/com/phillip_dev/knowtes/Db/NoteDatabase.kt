@@ -1,6 +1,7 @@
 package com.phillip_dev.knowtes.Db
 
 import android.content.Context
+import androidx.annotation.RestrictTo.Scope
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -15,22 +16,26 @@ abstract class NoteDatabase: RoomDatabase() {
     companion object{
         private  var INSTANCE : NoteDatabase? = null
 
-        fun getDataBase(context: Context) : NoteDatabase{
+        fun getDataBase(context: Context, scope : Scope) : NoteDatabase{
             return INSTANCE ?: synchronized(this){
                 val instance = Room.databaseBuilder(
                    context.applicationContext ,NoteDatabase::class.java,"note_database"
-                ).build()
+                )
+                    .addCallback(NoteDatabaseCallBack(scope))
+                    .build()
                 INSTANCE=instance
                 instance
             }
         }
     }
 
-    private class  NoteDatabaseCallBack() : Callback() {
+    private class  NoteDatabaseCallBack(scope: Scope) : Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
+            INSTANCE?.let {
 
+            }
         }
     }
 
