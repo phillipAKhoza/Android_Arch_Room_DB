@@ -7,6 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.phillip_dev.knowtes.Model.Note
+import kotlinx.coroutines.CoroutineScope
 
 @Database(entities = [Note::class], version = 1)
 abstract class NoteDatabase: RoomDatabase() {
@@ -16,7 +17,7 @@ abstract class NoteDatabase: RoomDatabase() {
     companion object{
         private  var INSTANCE : NoteDatabase? = null
 
-        fun getDataBase(context: Context, scope : Scope) : NoteDatabase{
+        fun getDataBase(context: Context, scope: CoroutineScope) : NoteDatabase{
             return INSTANCE ?: synchronized(this){
                 val instance = Room.databaseBuilder(
                    context.applicationContext ,NoteDatabase::class.java,"note_database"
@@ -29,7 +30,7 @@ abstract class NoteDatabase: RoomDatabase() {
         }
     }
 
-    private class  NoteDatabaseCallBack(scope: Scope) : Callback() {
+    private class  NoteDatabaseCallBack(private  val scope: CoroutineScope) : Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
