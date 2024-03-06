@@ -6,7 +6,8 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.phillip_dev.knowtes.Model.Note
-import java.util.concurrent.Flow
+import kotlinx.coroutines.flow.Flow
+
 
 @Dao
 interface NoteDao {
@@ -21,7 +22,7 @@ interface NoteDao {
     suspend fun delete(note: Note)
 
     @Query("SELECT * FROM note_table ORDER BY id ASC")
-    fun getAllNotes() : List<Note>
+    fun getAllNotes() : Flow<List<Note>>
 
 
 }
