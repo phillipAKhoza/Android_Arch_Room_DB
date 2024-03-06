@@ -4,5 +4,5 @@ import androidx.room.Database
 import com.phillip_dev.knowtes.Model.Note
 
 @Database(entities = [Note::class], version = 1)
-class NoteDatabase {
+abstract class NoteDatabase {
 }
