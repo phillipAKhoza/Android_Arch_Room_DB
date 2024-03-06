@@ -2,6 +2,7 @@ package com.phillip_dev.knowtes.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.phillip_dev.knowtes.Model.Note
@@ -31,4 +32,9 @@ class NoteViewModel(private  val repository: NoteRepository): ViewModel() {
     }
 
 
+}
+class  NoteViewModelFactory(private  var repository: NoteRepository): ViewModelProvider.Factory{
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return super.create(modelClass)
+    }
 }
