@@ -1,7 +1,6 @@
 package com.phillip_dev.knowtes.Db
 
 import android.content.Context
-import androidx.annotation.RestrictTo.Scope
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
