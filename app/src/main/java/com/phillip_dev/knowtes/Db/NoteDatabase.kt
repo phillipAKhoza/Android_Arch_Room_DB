@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.phillip_dev.knowtes.Model.Note
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Database(entities = [Note::class], version = 1)
 abstract class NoteDatabase: RoomDatabase() {
@@ -35,7 +36,9 @@ abstract class NoteDatabase: RoomDatabase() {
             super.onCreate(db)
 
             INSTANCE?.let {
+                scope.launch {
 
+                }
             }
         }
     }
