@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.phillip_dev.knowtes.NoteApplication
 import com.phillip_dev.knowtes.R
 import com.phillip_dev.knowtes.ViewModel.NoteViewModel
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
         val viewModelFactory = NoteViewModelFactory((application as NoteApplication).repository)
 
         noteViewModel = ViewModelProvider(this,viewModelFactory)[NoteViewModel::class.java]
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         noteViewModel.allNote.observe(this, Observer {
 
 //            update ui
+
         })
     }
 }
