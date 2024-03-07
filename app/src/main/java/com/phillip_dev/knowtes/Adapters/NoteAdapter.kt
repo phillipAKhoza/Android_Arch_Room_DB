@@ -37,4 +37,9 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.title.text = currentNote.title
         holder.description.text = currentNote.description
     }
+
+    fun setNote(myNotes: List<Note>){
+        this.notes = myNotes
+        notifyDataSetChanged()
+    }
 }
