@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         noteViewModel.allNote.observe(this, Observer {
 
+//            update ui
         })
     }
 }
