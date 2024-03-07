@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.phillip_dev.knowtes.NoteApplication
 import com.phillip_dev.knowtes.R
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager =  LinearLayoutManager(this)
         val viewModelFactory = NoteViewModelFactory((application as NoteApplication).repository)
 
         noteViewModel = ViewModelProvider(this,viewModelFactory)[NoteViewModel::class.java]
