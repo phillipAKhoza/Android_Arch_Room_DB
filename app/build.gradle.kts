@@ -39,6 +39,7 @@ android {
 
 dependencies {
     val room_version = "2.6.1"
+    val lifecycle_version = "2.7.0"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -49,13 +50,13 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 //    room db
-    implementation("androidx.room:room-runtime:$room_version")
+//    implementation("androidx.room:room-runtime:$room_version")
+    implementation ("androidx.room:room-ktx:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
     // To use Kotlin annotation processing tool (kapt)
     //noinspection KaptUsageInsteadOfKsp
     kapt("androidx.room:room-compiler:$room_version")
 //    viewModel
-    val lifecycle_version = "2.7.0"
 //    val arch_version = "2.2.0"
 
     // ViewModel
@@ -65,7 +66,7 @@ dependencies {
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     // Lifecycles only (without ViewModel or LiveData)
-//    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
     // Lifecycle utilities for Compose
     implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
 }
