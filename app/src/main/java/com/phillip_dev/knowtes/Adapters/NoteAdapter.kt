@@ -28,10 +28,13 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        var currentNote : Note = notes[position]
+
+        holder.title.text = currentNote.title
+        holder.description.text = currentNote.description
     }
 }
