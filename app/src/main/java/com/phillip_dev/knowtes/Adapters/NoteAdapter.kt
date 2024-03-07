@@ -28,7 +28,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-
+        return  notes.size
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
