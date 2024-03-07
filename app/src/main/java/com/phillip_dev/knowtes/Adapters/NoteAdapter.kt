@@ -1,5 +1,6 @@
 package com.phillip_dev.knowtes.Adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +39,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.description.text = currentNote.description
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setNote(myNotes: List<Note>){
         this.notes = myNotes
         notifyDataSetChanged()
