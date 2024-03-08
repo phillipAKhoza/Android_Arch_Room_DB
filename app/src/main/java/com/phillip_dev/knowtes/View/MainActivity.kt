@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
                 val rusultCode = it.resultCode
-
+                val data = it.data
             }
             )
 
