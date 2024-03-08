@@ -20,5 +20,12 @@ class AddNoteActivity : AppCompatActivity() {
         txtDescription = findViewById(R.id.edit_txt_description)
         btnCancel = findViewById(R.id.btn_cancel)
         btnSave = findViewById(R.id.btn_save)
+
+        btnCancel.setOnClickListener {
+
+        }
+        btnSave.setOnClickListener {
+
+        }
     }
 }
