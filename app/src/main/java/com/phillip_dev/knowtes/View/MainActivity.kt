@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -19,6 +22,8 @@ import com.phillip_dev.knowtes.ViewModel.NoteViewModelFactory
 class MainActivity : AppCompatActivity() {
 
     lateinit var noteViewModel: NoteViewModel
+
+    lateinit var addActivityResultLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,6 +32,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager =  LinearLayoutManager(this)
         val noteAdapter = NoteAdapter()
         recyclerView.adapter = noteAdapter
+
+        registerActivityResultLauncher()
+
+
         val viewModelFactory = NoteViewModelFactory((application as NoteApplication).repository)
 
         noteViewModel = ViewModelProvider(this,viewModelFactory)[NoteViewModel::class.java]
@@ -37,6 +46,17 @@ class MainActivity : AppCompatActivity() {
             noteAdapter.setNote(it)
 
         })
+    }
+    fun registerActivityResultLauncher(){
+
+        addActivityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+            ActivityResultCallback {
+                val rusultCode = it.resultCode
+
+            }
+            )
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId){
             R.id.add_note_item ->{
                 val intent = Intent(this,AddNoteActivity::class.java)
-                startActivity(intent)
+                addActivityResultLauncher.launch(intent)
             }
             R.id.delete_all_item ->{
 
