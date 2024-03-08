@@ -1,8 +1,10 @@
 package com.phillip_dev.knowtes.View
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -41,5 +43,13 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.main_menu,menu)
 
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.add_note_item ->{
+                val intent = Intent(this,AddNoteActivity::class.java)
+            }
+        }
     }
 }
