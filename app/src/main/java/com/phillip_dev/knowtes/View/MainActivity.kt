@@ -52,8 +52,13 @@ class MainActivity : AppCompatActivity() {
         addActivityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
-                val rusultCode = it.resultCode
+                val resultCode = it.resultCode
                 val data = it.data
+
+                if(resultCode == RESULT_OK && data != null){
+                    val noteTitle: String = data.getStringExtra("title").toString()
+                    val noteDescription: String = data.getStringExtra("description").toString()
+                }
             }
             )
 
