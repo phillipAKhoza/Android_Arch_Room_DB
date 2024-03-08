@@ -31,7 +31,7 @@ class AddNoteActivity : AppCompatActivity() {
         }
     }
 
-    fun saveNote(){
+    private fun saveNote(){
 
         val title : String = txtTitle.text.toString()
         val description: String = txtDescription.text.toString()
