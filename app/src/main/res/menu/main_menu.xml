@@ -7,4 +7,10 @@
         android:layout_height="wrap_content"
         android:icon="@drawable/add_icon"
         android:title="Add Note" />
+    <item
+        android:id="@+id/delete_all_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/delete_bin_icon"
+        android:title="Delete All Notes" />
 </menu>
