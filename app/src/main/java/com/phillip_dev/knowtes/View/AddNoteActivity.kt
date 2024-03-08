@@ -23,6 +23,7 @@ class AddNoteActivity : AppCompatActivity() {
 
         btnCancel.setOnClickListener {
 
+            finish()
         }
         btnSave.setOnClickListener {
 
