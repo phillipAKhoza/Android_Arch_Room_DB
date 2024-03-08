@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.phillip_dev.knowtes.Adapters.NoteAdapter
+import com.phillip_dev.knowtes.Model.Note
 import com.phillip_dev.knowtes.NoteApplication
 import com.phillip_dev.knowtes.R
 import com.phillip_dev.knowtes.ViewModel.NoteViewModel
@@ -58,6 +59,10 @@ class MainActivity : AppCompatActivity() {
                 if(resultCode == RESULT_OK && data != null){
                     val noteTitle: String = data.getStringExtra("title").toString()
                     val noteDescription: String = data.getStringExtra("description").toString()
+
+                    val note = Note(noteTitle,noteDescription)
+
+                    noteViewModel.addNote(note)
                 }
             }
             )
