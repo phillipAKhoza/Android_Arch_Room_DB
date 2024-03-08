@@ -26,7 +26,11 @@ class AddNoteActivity : AppCompatActivity() {
             finish()
         }
         btnSave.setOnClickListener {
-
+                saveNote()
         }
+    }
+
+    fun saveNote(){
+
     }
 }
