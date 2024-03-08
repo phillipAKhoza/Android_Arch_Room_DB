@@ -1,5 +1,6 @@
 package com.phillip_dev.knowtes.View
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -34,6 +35,11 @@ class AddNoteActivity : AppCompatActivity() {
 
         val title : String = txtTitle.text.toString()
         val description: String = txtDescription.text.toString()
+
+        val intent = Intent()
+        intent.putExtra("title",title)
+        intent.putExtra("description",description)
+        setResult(RESULT_OK,intent)
 
     }
 }
