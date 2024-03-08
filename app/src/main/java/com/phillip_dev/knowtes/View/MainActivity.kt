@@ -2,6 +2,7 @@ package com.phillip_dev.knowtes.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -34,5 +35,11 @@ class MainActivity : AppCompatActivity() {
             noteAdapter.setNote(it)
 
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+
+        return true
     }
 }
