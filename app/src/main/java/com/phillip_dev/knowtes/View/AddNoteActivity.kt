@@ -40,6 +40,6 @@ class AddNoteActivity : AppCompatActivity() {
         intent.putExtra("title",title)
         intent.putExtra("description",description)
         setResult(RESULT_OK,intent)
-
+        finish()
     }
 }
