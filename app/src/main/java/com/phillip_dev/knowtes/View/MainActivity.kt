@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId){
             R.id.add_note_item ->{
                 val intent = Intent(this,AddNoteActivity::class.java)
+                startActivity(intent)
             }
         }
     }
