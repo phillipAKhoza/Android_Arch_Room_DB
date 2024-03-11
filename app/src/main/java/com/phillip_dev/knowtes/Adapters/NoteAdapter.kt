@@ -9,8 +9,9 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.phillip_dev.knowtes.Model.Note
 import com.phillip_dev.knowtes.R
+import com.phillip_dev.knowtes.View.MainActivity
 
-class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+class NoteAdapter(private  val activity: MainActivity) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     var notes: List<Note> = ArrayList()
 
