@@ -33,4 +33,10 @@ class UpdateActivity : AppCompatActivity() {
     private fun updateNote(){
 
     }
+
+    fun getAndSetData(){
+        val currentTitle = intent.getStringExtra("currentTitle").toString()
+        val currentDescription = intent.getStringExtra("currentDescription").toString()
+        val currentId = intent.getIntExtra("currentId",-1)
+    }
 }
