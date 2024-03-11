@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                    noteViewModel.deleteNote(noteAdapter.getNote(direction))
+                    noteViewModel.deleteNote(noteAdapter.getNote(viewHolder.adapterPosition))
             }
 
         })
