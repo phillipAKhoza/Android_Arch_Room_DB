@@ -96,7 +96,14 @@ class MainActivity : AppCompatActivity() {
                 val data = it.data
 
                 if(resultCode == RESULT_OK && data != null){
+                        val updateTitle: String = data.getStringExtra("updatedTitle").toString()
+                        val updateDescription: String = data.getStringExtra("updatedDescription").toString()
+                        val noteId: Int = data.getIntExtra("id",-1).toInt()
 
+                    val note = Note(updateTitle,updateDescription)
+                    note.id = noteId
+
+                    noteViewModel.updateNote(note)
                 }
             }
         )
