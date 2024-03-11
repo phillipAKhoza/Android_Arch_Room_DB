@@ -23,9 +23,9 @@ import com.phillip_dev.knowtes.ViewModel.NoteViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var noteViewModel: NoteViewModel
+    private lateinit var noteViewModel: NoteViewModel
 
-    lateinit var addActivityResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var addActivityResultLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
