@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var noteViewModel: NoteViewModel
 
     private lateinit var addActivityResultLauncher: ActivityResultLauncher<Intent>
-    private lateinit var updateActivityResultLauncher: ActivityResultLauncher<Intent>
+    lateinit var updateActivityResultLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         }).attachToRecyclerView(recyclerView)
     }
-    private fun registerActivityResultLauncher(){
+     fun registerActivityResultLauncher(){
 
         addActivityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
@@ -88,7 +88,18 @@ class MainActivity : AppCompatActivity() {
                     noteViewModel.addNote(note)
                 }
             }
-            )
+        )
+        updateActivityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+            ActivityResultCallback {
+                val resultCode = it.resultCode
+                val data = it.data
+
+                if(resultCode == RESULT_OK && data != null){
+
+                }
+            }
+        )
 
     }
 
