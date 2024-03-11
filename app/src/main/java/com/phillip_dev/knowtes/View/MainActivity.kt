@@ -117,6 +117,7 @@ class MainActivity : AppCompatActivity() {
         dialogMessage.setNegativeButton("No", DialogInterface.OnClickListener { dialog, which ->
             dialog.cancel()
         })
+        dialogMessage.setPositiveButton("Yes")
     }
 }
 
