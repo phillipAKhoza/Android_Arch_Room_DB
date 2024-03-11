@@ -114,7 +114,9 @@ class MainActivity : AppCompatActivity() {
         val dialogMessage = AlertDialog.Builder(this)
         dialogMessage.setTitle("Delete All Notes")
         dialogMessage.setMessage("Do you want to delete all notes? swipe left or right to delete one note")
-        dialogMessage.setNegativeButton("No", DialogInterface.OnClickListener { dialog, which ->  })
+        dialogMessage.setNegativeButton("No", DialogInterface.OnClickListener { dialog, which ->
+            dialog.cancel()
+        })
     }
 }
 
