@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -107,4 +108,10 @@ class MainActivity : AppCompatActivity() {
         }
         return  true
     }
+
+    fun showDeleteMessage(){
+        val dialogMessage = AlertDialog.Builder(this)
+        dialogMessage.setTitle("")
+    }
 }
+
