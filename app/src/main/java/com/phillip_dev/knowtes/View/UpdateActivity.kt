@@ -16,5 +16,9 @@ class UpdateActivity : AppCompatActivity() {
         setContentView(R.layout.activity_update)
 
         supportActionBar?.title ="Update Note"
+        txtTitle = findViewById(R.id.edit_txt_title_update)
+        txtDescription = findViewById(R.id.edit_txt_description_update)
+        btnCancel = findViewById(R.id.btn_cancel_update)
+        btnSave = findViewById(R.id.btn_save_update)
     }
 }
