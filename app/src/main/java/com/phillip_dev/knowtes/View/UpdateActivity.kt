@@ -14,12 +14,13 @@ class UpdateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update)
-        getAndSetData()
         supportActionBar?.title ="Update Note"
         txtTitle = findViewById(R.id.edit_txt_title_update)
         txtDescription = findViewById(R.id.edit_txt_description_update)
         btnCancel = findViewById(R.id.btn_cancel_update)
         btnSave = findViewById(R.id.btn_save_update)
+
+        getAndSetData()
 
         btnCancel.setOnClickListener {
 
@@ -35,8 +36,8 @@ class UpdateActivity : AppCompatActivity() {
     }
 
     fun getAndSetData(){
-        val currentTitle = intent.getStringExtra("currentTitle").toString()
-        val currentDescription = intent.getStringExtra("currentDescription").toString()
+        val currentTitle = intent.getStringExtra("currentTitle")
+        val currentDescription = intent.getStringExtra("currentDescription")
         val currentId = intent.getIntExtra("currentId",-1)
 
         txtTitle.setText(currentTitle)
