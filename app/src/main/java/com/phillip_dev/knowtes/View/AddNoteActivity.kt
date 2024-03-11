@@ -16,7 +16,7 @@ class AddNoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
-
+            supportActionBar?.title ="Add Note"
         txtTitle = findViewById(R.id.edit_txt_title)
         txtDescription = findViewById(R.id.edit_txt_description)
         btnCancel = findViewById(R.id.btn_cancel)
