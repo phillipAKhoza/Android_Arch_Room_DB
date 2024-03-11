@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var noteViewModel: NoteViewModel
 
     private lateinit var addActivityResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var updateActivityResultLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
