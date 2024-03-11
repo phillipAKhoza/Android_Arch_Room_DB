@@ -30,7 +30,7 @@ class UpdateActivity : AppCompatActivity() {
         }
     }
 
-    fun updateNote(){
+    private fun updateNote(){
 
     }
 }
