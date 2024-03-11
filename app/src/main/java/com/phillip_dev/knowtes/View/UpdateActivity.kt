@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.phillip_dev.knowtes.R
 
 class UpdateActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class UpdateActivity : AppCompatActivity() {
     lateinit var txtDescription : EditText
     lateinit var btnCancel : Button
     lateinit var btnSave : Button
+    private var currentId = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update)
@@ -39,12 +41,18 @@ class UpdateActivity : AppCompatActivity() {
         val intent = Intent()
         intent.putExtra("updatedTitle",updatedTitle)
         intent.putExtra("updatedDescription",updatedDescription)
+        if (currentId != -1){
+            intent.putExtra("id",currentId)
+            setResult(RESULT_OK,intent)
+        }else{
+            Toast.makeText(applicationContext,"Note ID not found", Toast.LENGTH_LONG).show()
+        }
     }
 
     fun getAndSetData(){
         val currentTitle = intent.getStringExtra("currentTitle")
         val currentDescription = intent.getStringExtra("currentDescription")
-        val currentId = intent.getIntExtra("currentId",-1)
+        currentId = intent.getIntExtra("currentId",-1)
 
         txtTitle.setText(currentTitle)
         txtDescription.setText(currentDescription)
