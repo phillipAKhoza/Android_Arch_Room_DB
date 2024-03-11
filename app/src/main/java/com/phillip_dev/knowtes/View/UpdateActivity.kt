@@ -44,6 +44,7 @@ class UpdateActivity : AppCompatActivity() {
         if (currentId != -1){
             intent.putExtra("id",currentId)
             setResult(RESULT_OK,intent)
+            finish()
         }else{
             Toast.makeText(applicationContext,"Note ID not found", Toast.LENGTH_LONG).show()
         }
