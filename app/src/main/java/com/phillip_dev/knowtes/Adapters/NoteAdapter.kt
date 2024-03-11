@@ -38,6 +38,10 @@ class NoteAdapter(private  val activity: MainActivity) : RecyclerView.Adapter<No
 
         holder.title.text = currentNote.title
         holder.description.text = currentNote.description
+
+        holder.cardView.setOnClickListener {
+
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
