@@ -14,7 +14,7 @@ class UpdateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update)
-
+        getAndSetData()
         supportActionBar?.title ="Update Note"
         txtTitle = findViewById(R.id.edit_txt_title_update)
         txtDescription = findViewById(R.id.edit_txt_description_update)
