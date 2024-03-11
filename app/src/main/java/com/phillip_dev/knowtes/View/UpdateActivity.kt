@@ -1,5 +1,6 @@
 package com.phillip_dev.knowtes.View
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -34,6 +35,10 @@ class UpdateActivity : AppCompatActivity() {
     private fun updateNote(){
         val updatedTitle = txtTitle.text.toString()
         val updatedDescription = txtDescription.text.toString()
+
+        val intent = Intent()
+        intent.putExtra("updatedTitle",updatedTitle)
+        intent.putExtra("updatedDescription",updatedDescription)
     }
 
     fun getAndSetData(){
