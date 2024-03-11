@@ -1,6 +1,7 @@
 package com.phillip_dev.knowtes.Adapters
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.phillip_dev.knowtes.Model.Note
 import com.phillip_dev.knowtes.R
 import com.phillip_dev.knowtes.View.MainActivity
+import com.phillip_dev.knowtes.View.UpdateActivity
 
 class NoteAdapter(private  val activity: MainActivity) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
@@ -40,7 +42,9 @@ class NoteAdapter(private  val activity: MainActivity) : RecyclerView.Adapter<No
         holder.description.text = currentNote.description
 
         holder.cardView.setOnClickListener {
-
+            val intent = Intent(activity,UpdateActivity::class.java)
+            intent.putExtra("currentTitle",currentNote.title)
+            intent.putExtra("currentDescription",currentNote.description)
         }
     }
 
