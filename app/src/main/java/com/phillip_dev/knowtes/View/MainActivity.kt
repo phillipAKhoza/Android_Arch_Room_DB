@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager =  LinearLayoutManager(this)
-        val noteAdapter = NoteAdapter()
+        val noteAdapter = NoteAdapter(this)
         recyclerView.adapter = noteAdapter
 
         registerActivityResultLauncher()
