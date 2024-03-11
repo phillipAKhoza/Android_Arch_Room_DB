@@ -1,5 +1,6 @@
 package com.phillip_dev.knowtes.View
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -113,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         val dialogMessage = AlertDialog.Builder(this)
         dialogMessage.setTitle("Delete All Notes")
         dialogMessage.setMessage("Do you want to delete all notes? swipe left or right to delete one note")
-//        dialogMessage.setNegativeButton()
+        dialogMessage.setNegativeButton("No", DialogInterface.OnClickListener { dialog, which ->  })
     }
 }
 
