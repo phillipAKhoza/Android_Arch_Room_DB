@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,"Note deleted", Toast.LENGTH_LONG).show()
             }
 
-        })
+        }).attachToRecyclerView(recyclerView)
     }
     private fun registerActivityResultLauncher(){
 
