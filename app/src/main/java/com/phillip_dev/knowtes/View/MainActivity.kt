@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                 addActivityResultLauncher.launch(intent)
             }
             R.id.delete_all_item ->{
-
+                showDeleteMessage()
             }
         }
         return  true
