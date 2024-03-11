@@ -120,6 +120,8 @@ class MainActivity : AppCompatActivity() {
         dialogMessage.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
             noteViewModel.deleteAllNotes()
         })
+
+        dialogMessage.create().show()
     }
 }
 
