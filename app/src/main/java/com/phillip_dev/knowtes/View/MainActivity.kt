@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -61,7 +62,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                    noteViewModel.deleteNote(noteAdapter.getNote(viewHolder.adapterPosition))
+                noteViewModel.deleteNote(noteAdapter.getNote(viewHolder.adapterPosition))
+                Toast.makeText(applicationContext,"Note deleted", Toast.LENGTH_LONG).show()
             }
 
         })
