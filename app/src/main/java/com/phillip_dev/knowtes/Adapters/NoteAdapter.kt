@@ -45,6 +45,9 @@ class NoteAdapter(private  val activity: MainActivity) : RecyclerView.Adapter<No
             val intent = Intent(activity,UpdateActivity::class.java)
             intent.putExtra("currentTitle",currentNote.title)
             intent.putExtra("currentDescription",currentNote.description)
+            intent.putExtra("currentId",currentNote.id)
+
+            activity.updateActivityResultLauncher.launch(intent)
         }
     }
 
