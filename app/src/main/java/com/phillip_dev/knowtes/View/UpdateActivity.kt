@@ -32,7 +32,8 @@ class UpdateActivity : AppCompatActivity() {
     }
 
     private fun updateNote(){
-
+        val updatedTitle = txtTitle.text.toString()
+        val updatedDescription = txtDescription.text.toString()
     }
 
     fun getAndSetData(){
