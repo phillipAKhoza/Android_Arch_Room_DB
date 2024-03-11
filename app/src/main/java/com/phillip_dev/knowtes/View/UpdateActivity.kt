@@ -26,7 +26,11 @@ class UpdateActivity : AppCompatActivity() {
             finish()
         }
         btnSave.setOnClickListener {
-            saveNote()
+            updateNote()
         }
+    }
+
+    fun updateNote(){
+
     }
 }
