@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
         })
     }
-    fun registerActivityResultLauncher(){
+    private fun registerActivityResultLauncher(){
 
         addActivityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
