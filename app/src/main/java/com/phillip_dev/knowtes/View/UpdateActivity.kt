@@ -38,5 +38,8 @@ class UpdateActivity : AppCompatActivity() {
         val currentTitle = intent.getStringExtra("currentTitle").toString()
         val currentDescription = intent.getStringExtra("currentDescription").toString()
         val currentId = intent.getIntExtra("currentId",-1)
+
+        txtTitle.setText(currentTitle)
+        txtDescription.setText(currentDescription)
     }
 }
