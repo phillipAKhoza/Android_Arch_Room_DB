@@ -1,12 +1,17 @@
 package com.phillip_dev.knowtes.Notification
 
+import android.Manifest
+import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.phillip_dev.knowtes.R
 
 class NotificationReceiver : BroadcastReceiver() {
@@ -29,7 +34,12 @@ class NotificationReceiver : BroadcastReceiver() {
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             }
 
-
+            val notificationManagerCompat = NotificationManagerCompat.from(context)
+            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(context as Activity, arrayOf(Manifest.permission.POST_NOTIFICATIONS),1)
+            }
+            notificationManagerCompat.notify(1,builder.build())
         }
     }
 }
