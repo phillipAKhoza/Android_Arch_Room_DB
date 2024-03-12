@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 import com.phillip_dev.knowtes.R
 import java.util.Calendar
 
@@ -30,7 +32,11 @@ class AddNoteActivity : AppCompatActivity() {
         val currentMinutes = canceler.get(Calendar.MINUTE)
 
         btnSetReminder.setOnClickListener {
-
+            val timePicker = MaterialTimePicker.Builder()
+                .setTimeFormat(TimeFormat.CLOCK_12H)
+                .setHour(currentHour)
+                .setMinute(currentMinutes)
+                .setTitleText("Set Note Reminder")
         }
 
         btnCancel.setOnClickListener {
