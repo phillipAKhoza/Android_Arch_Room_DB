@@ -62,6 +62,7 @@ class AddNoteActivity : AppCompatActivity() {
                 }
 
                 val alarmManager : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,canceler.timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent)
             }
         }
 
