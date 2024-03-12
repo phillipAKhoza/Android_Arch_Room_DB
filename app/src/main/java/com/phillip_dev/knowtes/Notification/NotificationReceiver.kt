@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
+import com.phillip_dev.knowtes.R
 
 class NotificationReceiver : BroadcastReceiver() {
     private  val CHANNEL_ID = "1"
@@ -17,6 +18,10 @@ class NotificationReceiver : BroadcastReceiver() {
                 val channel = NotificationChannel(CHANNEL_ID,"1",NotificationManager.IMPORTANCE_DEFAULT)
                 val manager : NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 manager.createNotificationChannel(channel)
+
+                builder.setSmallIcon(R.drawable.notifications_icon)
+                    .setContentTitle("Notification")
+                    .setContentText("This is a reminder")
 
             }
         }
