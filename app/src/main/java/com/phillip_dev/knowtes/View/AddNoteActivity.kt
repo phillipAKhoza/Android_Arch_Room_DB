@@ -29,6 +29,10 @@ class AddNoteActivity : AppCompatActivity() {
         val currentHour = canceler.get(Calendar.HOUR_OF_DAY)
         val currentMinutes = canceler.get(Calendar.MINUTE)
 
+        btnSetReminder.setOnClickListener {
+
+        }
+
         btnCancel.setOnClickListener {
 
             finish()
