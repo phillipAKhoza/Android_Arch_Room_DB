@@ -1,6 +1,8 @@
 package com.phillip_dev.knowtes.View
 
+import android.app.AlarmManager
 import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -58,6 +60,8 @@ class AddNoteActivity : AppCompatActivity() {
                     PendingIntent.getBroadcast(applicationContext,1,intent,PendingIntent.FLAG_UPDATE_CURRENT)
 
                 }
+
+                val alarmManager : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
             }
         }
 
