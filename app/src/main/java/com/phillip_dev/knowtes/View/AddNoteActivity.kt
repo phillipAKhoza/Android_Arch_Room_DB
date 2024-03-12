@@ -13,10 +13,11 @@ class AddNoteActivity : AppCompatActivity() {
     lateinit var txtDescription : EditText
     lateinit var btnCancel : Button
     lateinit var btnSave : Button
+    lateinit var btnSetReminder: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
-            supportActionBar?.title ="Add Note"
+        supportActionBar?.title ="Add Note"
         txtTitle = findViewById(R.id.edit_txt_title)
         txtDescription = findViewById(R.id.edit_txt_description)
         btnCancel = findViewById(R.id.btn_cancel)
