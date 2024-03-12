@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import com.phillip_dev.knowtes.Notification.NotificationReceiver
 import com.phillip_dev.knowtes.R
 import java.util.Calendar
 
@@ -46,6 +47,8 @@ class AddNoteActivity : AppCompatActivity() {
                 canceler.set(Calendar.MINUTE,timePicker.minute)
                 canceler.set(Calendar.SECOND,0)
                 canceler.set(Calendar.MILLISECOND,0)
+
+                val intent = Intent(applicationContext,NotificationReceiver::class.java)
             }
         }
 
