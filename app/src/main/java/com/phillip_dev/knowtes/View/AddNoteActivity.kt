@@ -40,6 +40,8 @@ class AddNoteActivity : AppCompatActivity() {
                 .build()
 
             timePicker.show(supportFragmentManager,"1")
+
+            timePicker.addOnPositiveButtonClickListener {  }
         }
 
         btnCancel.setOnClickListener {
