@@ -14,7 +14,8 @@ class NotificationReceiver : BroadcastReceiver() {
         if (context != null){
             val builder = NotificationCompat.Builder(context,CHANNEL_ID)
             if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.O){
-                val chanell = NotificationChannel(CHANNEL_ID,"1",NotificationManager.IMPORTANCE_DEFAULT)
+                val channel = NotificationChannel(CHANNEL_ID,"1",NotificationManager.IMPORTANCE_DEFAULT)
+                val manager : NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             }
         }
