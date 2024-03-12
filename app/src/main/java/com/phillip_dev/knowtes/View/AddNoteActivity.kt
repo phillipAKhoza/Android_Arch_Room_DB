@@ -26,6 +26,8 @@ class AddNoteActivity : AppCompatActivity() {
         btnSetReminder = findViewById(R.id.btn_setRem)
 
         val canceler = Calendar.getInstance()
+        val currentHour = canceler.get(Calendar.HOUR_OF_DAY)
+        val currentMinutes = canceler.get(Calendar.MINUTE)
 
         btnCancel.setOnClickListener {
 
