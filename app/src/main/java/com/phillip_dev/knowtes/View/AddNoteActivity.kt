@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.phillip_dev.knowtes.R
+import java.util.Calendar
 
 class AddNoteActivity : AppCompatActivity() {
 
@@ -23,6 +24,8 @@ class AddNoteActivity : AppCompatActivity() {
         btnCancel = findViewById(R.id.btn_cancel)
         btnSave = findViewById(R.id.btn_save)
         btnSetReminder = findViewById(R.id.btn_setRem)
+
+        val canceler = Calendar.getInstance()
 
         btnCancel.setOnClickListener {
 
