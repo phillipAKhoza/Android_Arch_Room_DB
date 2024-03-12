@@ -37,6 +37,9 @@ class AddNoteActivity : AppCompatActivity() {
                 .setHour(currentHour)
                 .setMinute(currentMinutes)
                 .setTitleText("Set Note Reminder")
+                .build()
+
+            timePicker.show(supportFragmentManager,"1")
         }
 
         btnCancel.setOnClickListener {
