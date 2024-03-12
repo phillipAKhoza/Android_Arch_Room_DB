@@ -1,6 +1,8 @@
 package com.phillip_dev.knowtes.View
 
+import android.app.PendingIntent
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -49,6 +51,13 @@ class AddNoteActivity : AppCompatActivity() {
                 canceler.set(Calendar.MILLISECOND,0)
 
                 val intent = Intent(applicationContext,NotificationReceiver::class.java)
+
+                val pendingIntent = if(Build.VERSION.SDK_INT >= 23){
+                    PendingIntent.getBroadcast(applicationContext,1,intent,PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+                }else{
+                    PendingIntent.getBroadcast(applicationContext,1,intent,PendingIntent.FLAG_UPDATE_CURRENT)
+
+                }
             }
         }
 
