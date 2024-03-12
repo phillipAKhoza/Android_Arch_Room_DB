@@ -1,5 +1,7 @@
 package com.phillip_dev.knowtes.Notification
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -12,7 +14,7 @@ class NotificationReceiver : BroadcastReceiver() {
         if (context != null){
             val builder = NotificationCompat.Builder(context,CHANNEL_ID)
             if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.O){
-
+                val chanell = NotificationChannel(CHANNEL_ID,"1",NotificationManager.IMPORTANCE_DEFAULT)
 
             }
         }
