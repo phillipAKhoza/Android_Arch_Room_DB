@@ -23,7 +23,13 @@ class NotificationReceiver : BroadcastReceiver() {
                     .setContentTitle("Notification")
                     .setContentText("This is a reminder")
 
+            }else{
+                builder.setContentTitle("Reminder")
+                    .setContentText("This is a reminder")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             }
+
+
         }
     }
 }
