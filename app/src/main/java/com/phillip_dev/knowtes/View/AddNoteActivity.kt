@@ -55,12 +55,8 @@ class AddNoteActivity : AppCompatActivity() {
 
                 val intent = Intent(applicationContext,NotificationReceiver::class.java)
 
-                val pendingIntent = if(Build.VERSION.SDK_INT >= 23){
+                val pendingIntent =
                     PendingIntent.getBroadcast(applicationContext,1,intent,PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-                }else{
-                    PendingIntent.getBroadcast(applicationContext,1,intent,PendingIntent.FLAG_UPDATE_CURRENT)
-
-                }
 
                 val alarmManager : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,canceler.timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent)
