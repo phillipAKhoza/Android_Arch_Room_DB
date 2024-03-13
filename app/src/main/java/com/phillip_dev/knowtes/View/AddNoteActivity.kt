@@ -33,9 +33,9 @@ class AddNoteActivity : AppCompatActivity() {
         btnSave = findViewById(R.id.btn_save)
         btnSetReminder = findViewById(R.id.btn_setRem)
 
-        val canceler = Calendar.getInstance()
-        val currentHour = canceler.get(Calendar.HOUR_OF_DAY)
-        val currentMinutes = canceler.get(Calendar.MINUTE)
+        val calendar = Calendar.getInstance()
+        val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
+        val currentMinutes = calendar.get(Calendar.MINUTE)
 
         btnSetReminder.setOnClickListener {
             val timePicker = MaterialTimePicker.Builder()
@@ -48,10 +48,10 @@ class AddNoteActivity : AppCompatActivity() {
             timePicker.show(supportFragmentManager,"1")
 
             timePicker.addOnPositiveButtonClickListener {
-                canceler.set(Calendar.HOUR_OF_DAY,timePicker.hour)
-                canceler.set(Calendar.MINUTE,timePicker.minute)
-                canceler.set(Calendar.SECOND,0)
-                canceler.set(Calendar.MILLISECOND,0)
+                calendar.set(Calendar.HOUR_OF_DAY,timePicker.hour)
+                calendar.set(Calendar.MINUTE,timePicker.minute)
+                calendar.set(Calendar.SECOND,0)
+                calendar.set(Calendar.MILLISECOND,0)
 
                 val intent = Intent(applicationContext,NotificationReceiver::class.java)
 
@@ -59,7 +59,7 @@ class AddNoteActivity : AppCompatActivity() {
                     PendingIntent.getBroadcast(applicationContext,1,intent,PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 
                 val alarmManager : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,canceler.timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent)
+                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent)
 
                 Toast.makeText(applicationContext,"Note Reminder Set",Toast.LENGTH_LONG).show()
             }
