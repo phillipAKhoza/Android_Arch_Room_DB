@@ -15,9 +15,9 @@ import androidx.core.app.NotificationManagerCompat
 import com.phillip_dev.knowtes.R
 
 class NotificationReceiver : BroadcastReceiver() {
-    private  val CHANNEL_ID = "1"
     override fun onReceive(context: Context?, intent: Intent?) {
         if (context != null){
+            val CHANNEL_ID = "1"
             val builder = NotificationCompat.Builder(context,CHANNEL_ID)
             if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.O){
                 val rChannel = NotificationChannel(CHANNEL_ID,"note reminder",NotificationManager.IMPORTANCE_DEFAULT)
