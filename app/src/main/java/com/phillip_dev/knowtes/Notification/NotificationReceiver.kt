@@ -34,7 +34,7 @@ class NotificationReceiver : BroadcastReceiver() {
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             }
 
-            val notificationManagerCompat = NotificationManagerCompat.from(context.applicationContext)
+            val notificationManagerCompat = NotificationManagerCompat.from(context)
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
             ) {
                 ActivityCompat.requestPermissions(context as Activity, arrayOf(Manifest.permission.POST_NOTIFICATIONS),1)
