@@ -52,7 +52,9 @@ class AddNoteActivity : AppCompatActivity() {
                 calendar.set(Calendar.MINUTE,timePicker.minute)
                 calendar.set(Calendar.SECOND,0)
                 calendar.set(Calendar.MILLISECOND,0)
+
                 val title : String = txtTitle.text.toString()
+                val description: String = txtDescription.text.toString()
                 val intent = Intent(applicationContext,NotificationReceiver::class.java)
                 intent.putExtra("rTitle",title )
 
