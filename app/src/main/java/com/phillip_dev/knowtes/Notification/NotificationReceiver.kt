@@ -19,12 +19,12 @@ class NotificationReceiver : BroadcastReceiver() {
         if (context != null){
             val CHANNEL_ID = "1"
             val builder = NotificationCompat.Builder(context,CHANNEL_ID)
+            val title = intent?.getStringExtra("rTitle")
+            val description = intent?.getStringExtra("rDescription")
             if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.O){
                 val rChannel = NotificationChannel(CHANNEL_ID,"note reminder",NotificationManager.IMPORTANCE_DEFAULT)
                 val rManager : NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 rManager.createNotificationChannel(rChannel)
-                val title = intent?.getStringExtra("rTitle")
-                val description = intent?.getStringExtra("rDescription")
                 builder.setSmallIcon(R.drawable.notifications_icon)
                     .setContentTitle("Reminder: $title")
                     .setContentText(description)
