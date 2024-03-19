@@ -23,7 +23,7 @@ class NotificationReceiver : BroadcastReceiver() {
                 val rChannel = NotificationChannel(CHANNEL_ID,"note reminder",NotificationManager.IMPORTANCE_DEFAULT)
                 val rManager : NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 rManager.createNotificationChannel(rChannel)
-
+                val title = intent?.getStringExtra("rTitle")
                 builder.setSmallIcon(R.drawable.notifications_icon)
                     .setContentTitle("Notification")
                     .setContentText("This is a reminder")
