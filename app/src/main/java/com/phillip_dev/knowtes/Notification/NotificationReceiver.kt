@@ -30,8 +30,8 @@ class NotificationReceiver : BroadcastReceiver() {
                     .setContentText(description)
 
             }else{
-                builder.setContentTitle("Reminder")
-                    .setContentText("This is a reminder")
+                builder.setContentTitle("Reminder: $title")
+                    .setContentText(description)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             }
 
