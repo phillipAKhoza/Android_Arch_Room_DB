@@ -57,6 +57,7 @@ class AddNoteActivity : AppCompatActivity() {
                 val description: String = txtDescription.text.toString()
                 val intent = Intent(applicationContext,NotificationReceiver::class.java)
                 intent.putExtra("rTitle",title )
+                intent.putExtra("rDescription",description )
 
                 val pendingIntent =
                     PendingIntent.getBroadcast(applicationContext,1,intent,PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
